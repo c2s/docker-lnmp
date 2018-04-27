@@ -1,0 +1,75 @@
+version: '2'
+
+services:
+
+  ### Nginx container #########################################
+
+  nginx:
+      build:
+        context: ./build/nginx
+        args:
+          TIME_ZONE: ${GLOBAL_TIME_ZONE}
+      privileged: true
+      ports:
+        - "${HTTP_PORT}:80"
+        - "${HTTPS_PORT}:443"
+      links:
+        - "php"
+      volumes:
+        - ${GLOBAL_APP_PATH}work/wwwroot:/etc/nginx/html/
+        - ${GLOBAL_APP_PATH}work/common/nginx/config/conf.d:/etc/nginx/conf.d
+        - ${GLOBAL_APP_PATH}work/common/nginx/log:/var/log/nginx
+
+  ### PHP container #########################################
+
+  php:
+      build:
+        context: ./build/php
+        args:
+          TIME_ZONE: ${GLOBAL_TIME_ZONE}
+          CHANGE_SOURCE: ${GLOBAL_CHANGE_SOURCE}
+      privileged: true
+      ports:
+        - "9070:9000"
+      links:
+        - "mysql"
+        - "redis"
+      volumes:
+        - ${GLOBAL_APP_PATH}work/wwwroot:/etc/nginx/html
+        - ${GLOBAL_APP_PATH}work/common/php/config/php.ini:/usr/local/etc/php/php.ini
+        - ${GLOBAL_APP_PATH}work/common/php/log:/var/log
+
+  ### Mysql container #########################################
+
+  mysql:
+      build:
+        context: ./build/mysql
+        args:
+          TIME_ZONE: ${GLOBAL_TIME_ZONE}
+          CHANGE_SOURCE: ${GLOBAL_CHANGE_SOURCE}
+      privileged: true
+      ports:
+        - "${MYSQL_PORT}:3306"
+      volumes:
+        - ${GLOBAL_APP_PATH}work/common/mysql/data:/var/lib/mysql
+        - ${GLOBAL_APP_PATH}work/common/mysql/config/mysql.cnf:/etc/mysql/conf.d/mysql.cnf
+        - ${GLOBAL_APP_PATH}work/common/mysql/log/error.log:/var/log/mysql/error.log
+        - ${GLOBAL_APP_PATH}work/common/mysql/backup:/var/backup
+        - ${GLOBAL_APP_PATH}work/common/mysql/crontabs:/var/spool/cron/crontabs
+        - ${GLOBAL_APP_PATH}work/common/mysql/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
+      environment:
+        MYSQL_ROOT_PASSWORD: ${MYSQL_PASSWORD}
+
+  ### Redis container #########################################
+
+  redis:
+      build:
+        context: ./build/redis
+        args:
+          TIME_ZONE: ${GLOBAL_TIME_ZONE}
+      privileged: true
+      ports:
+        - "${REDIS_PORT}:6379"
+      volumes:
+        - ${GLOBAL_APP_PATH}work/common/redis/config/redis.conf:/usr/local/etc/redis/redis.conf
+        - ${GLOBAL_APP_PATH}work/common/redis/log/redis.log:/var/log/redis/redis.log
