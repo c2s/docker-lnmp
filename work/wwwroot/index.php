@@ -42,7 +42,7 @@
 </p>
 
 <footer>
-	<a href="https://github.com/menghuanplus/docker-lnmp" target="_blank">Get Documentation</a>
+	<a href="https://github.com/imofei/docker-lnmp" target="_blank">Get Documentation</a>
 
 
 </footer>
