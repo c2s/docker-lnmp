@@ -5,7 +5,7 @@ Docker LNMP 构建出基于 Docker 的 PHP 开发环境，其优势有在短时�
 ##### 版本及组件
 
 * 当前版本：2.0
-* 自带组件：PHP/FPM 7.1、Nginx 1.12.1、mariadb 10.11、Redis 4.0.8
+* 自带组件：PHP/FPM 7.3、Nginx 1.12.1、mysq 5.7 、Redis 4.0.8
 
 ##### 目录结构
 
