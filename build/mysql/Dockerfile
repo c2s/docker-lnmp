@@ -1,4 +1,4 @@
-FROM mariadb
+FROM mysql:5.7
 MAINTAINER mofei <root@mofei.org>
 
 # ARGS

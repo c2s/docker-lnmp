@@ -30,7 +30,7 @@ services:
           CHANGE_SOURCE: ${GLOBAL_CHANGE_SOURCE}
       privileged: true
       ports:
-        - "9070:9000"
+        - "9000:9000"
       links:
         - "mysql"
         - "redis"
