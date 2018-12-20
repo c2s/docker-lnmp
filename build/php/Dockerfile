@@ -39,7 +39,8 @@ RUN apt-get install -y --no-install-recommends \
 		cron \
 		vim \
 		unzip \
-		git
+		git \
+		zip
 
 
 ####################################################################################
@@ -47,7 +48,7 @@ RUN apt-get install -y --no-install-recommends \
 ####################################################################################
 
 RUN docker-php-ext-configure gd --with-freetype-dir --with-jpeg-dir
-RUN docker-php-ext-install gd pdo_mysql mysqli
+RUN docker-php-ext-install gd pdo_mysql mysqli zip bcmath
 
 # Redis
 RUN pecl install /tmp/redis.tgz \
