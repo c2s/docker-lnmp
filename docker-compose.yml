@@ -39,6 +39,23 @@ services:
         - ${GLOBAL_APP_PATH}work/common/php/config/php.ini:/usr/local/etc/php/php.ini
         - ${GLOBAL_APP_PATH}work/common/php/log:/var/log
 
+  php71:
+      build:
+        context: ./build/php71
+        args:
+          TIME_ZONE: ${GLOBAL_TIME_ZONE}
+          CHANGE_SOURCE: ${GLOBAL_CHANGE_SOURCE}
+      privileged: true
+      ports:
+        - "9001:9000"
+      links:
+        - "mysql"
+        - "redis"
+      volumes:
+        - ${GLOBAL_APP_PATH}work/wwwroot:/etc/nginx/html
+        - ${GLOBAL_APP_PATH}work/common/php71/config/php.ini:/usr/local/etc/php/php.ini
+        - ${GLOBAL_APP_PATH}work/common/php71/log:/var/log
+
   ### Mysql container #########################################
 
   mysql:
@@ -59,6 +76,22 @@ services:
         - ${GLOBAL_APP_PATH}work/common/mysql/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
       environment:
         MYSQL_ROOT_PASSWORD: ${MYSQL_PASSWORD}
+
+  ### Mongo container #########################################
+
+  mongodb:
+      build:
+        context: ./build/mongo
+        args:
+          TIME_ZONE: ${GLOBAL_TIME_ZONE}
+      privileged: true
+      ports:
+        - "${MONGO_PORT}:27017"
+      volumes:
+        - ${GLOBAL_APP_PATH}work/common/mongo/config/mongo.conf:/usr/local/etc/mongo/mongo.conf
+        - ${GLOBAL_APP_PATH}work/common/mongo/log/:/var/log/mongodb
+        - ${GLOBAL_APP_PATH}work/common/mongo/data:/var/lib/mongodb
+
 
   ### Redis container #########################################
 

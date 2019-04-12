@@ -1,4 +1,4 @@
-FROM php:7.3-fpm
+FROM php:7.1-fpm
 MAINTAINER mofei <root@mofei.org>
 
 # ARGS
@@ -39,7 +39,8 @@ RUN apt-get install -y --no-install-recommends \
 		cron \
 		vim \
 		unzip \
-		git
+		git \
+		zip
 
 
 ####################################################################################
@@ -47,15 +48,11 @@ RUN apt-get install -y --no-install-recommends \
 ####################################################################################
 
 RUN docker-php-ext-configure gd --with-freetype-dir --with-jpeg-dir
-RUN docker-php-ext-install gd pdo_mysql mysqli
+RUN docker-php-ext-install gd pdo_mysql mysqli zip bcmath
 
 # Redis
 RUN pecl install /tmp/redis.tgz \
 	&& echo "extension=redis.so" > /usr/local/etc/php/conf.d/redis.ini
-
-# mongodb
-RUN pecl install mongodb \
-    	&& echo "extension=mongodb.so" > /usr/local/etc/php/conf.d/mongodb.ini
 
 # Swoole
 RUN pecl install swoole && echo "extension=swoole.so" > /usr/local/etc/php/conf.d/swoole.ini
