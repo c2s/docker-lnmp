@@ -23,20 +23,20 @@ services:
   ### PHP container #########################################
   php71:
     build:
-      context: ./build/php73
+      context: ./build/php71
       args:
         TIME_ZONE: ${GLOBAL_TIME_ZONE}
         CHANGE_SOURCE: ${GLOBAL_CHANGE_SOURCE}
     privileged: true
     ports:
-      - "9002:9000"
+      - "9001:9000"
     links:
       - "mysql"
       - "redis"
     volumes:
       - ${GLOBAL_APP_PATH}work/wwwroot:/etc/nginx/html
-      - ${GLOBAL_APP_PATH}work/common/php73/config/php.ini:/usr/local/etc/php/php.ini
-      - ${GLOBAL_APP_PATH}work/common/php73/log:/var/log
+      - ${GLOBAL_APP_PATH}work/common/php71/config/php.ini:/usr/local/etc/php/php.ini
+      - ${GLOBAL_APP_PATH}work/common/php71/log:/var/log
 
   php73:
       build:

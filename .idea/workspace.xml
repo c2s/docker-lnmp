@@ -2,33 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a02c192-8e6d-416f-a867-ac9a7635a006" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/build/php73/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/php73/sources.list" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/php74/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/php74/composer.phar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/php74/sources.list" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/php8/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/php8/composer.phar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/php8/sources.list" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/redis/sources.list" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env-example" beforeDir="false" afterPath="$PROJECT_DIR$/.env-example" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/docker-lnmp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/docker-lnmp.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/mysql/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/build/mysql/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/mysql/sources.list" beforeDir="false" afterPath="$PROJECT_DIR$/build/mysql/sources.list" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/nginx/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/build/nginx/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/php/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/php/composer.phar" beforeDir="false" afterPath="$PROJECT_DIR$/build/php73/composer.phar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/php/mcrypt-1.0.0.tgz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/php/redis-3.1.3.tgz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/php/sources.list" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/php71/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/build/php71/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/php71/mcrypt-1.0.0.tgz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/php71/redis-3.1.3.tgz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/php71/sources.list" beforeDir="false" afterPath="$PROJECT_DIR$/build/php71/sources.list" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/redis/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/build/redis/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -52,15 +27,15 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/build/php8" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/build/php8" />
       <recent name="$PROJECT_DIR$/build/redis" />
       <recent name="$PROJECT_DIR$/build" />
       <recent name="$PROJECT_DIR$/build/php" />
-      <recent name="$PROJECT_DIR$/work/common" />
     </key>
   </component>
   <component name="ServiceViewManager">
@@ -87,7 +62,7 @@
       <updated>1544538069949</updated>
       <workItem from="1544538071101" duration="2277000" />
       <workItem from="1555070254568" duration="227000" />
-      <workItem from="1606447223423" duration="10968000" />
+      <workItem from="1606447223423" duration="11649000" />
     </task>
     <servers />
   </component>
