@@ -1,4 +1,4 @@
-FROM php:7.1-fpm
+FROM php:7.1.33-fpm-stretch
 MAINTAINER mofei <root@mofei.org>
 
 # ARGS
@@ -54,7 +54,7 @@ RUN pecl install redis && docker-php-ext-enable redis
 RUN pecl install swoole && docker-php-ext-enable swoole
 # Mcrypt
 RUN apt-get install -y libmcrypt-dev libmhash-dev \
-	&& pecl install mcrypt-1.0.3 && docker-php-ext-enable mcrypt
+	&& pecl install mcrypt-1.0.0 && docker-php-ext-enable mcrypt
 # Inotify
 RUN pecl install inotify && docker-php-ext-enable inotify
 
