@@ -1,4 +1,4 @@
-FROM nginx:1.12.1
+FROM nginx:1.19.5
 MAINTAINER mofei <root@mofei.org>
 
 # Change Timezone

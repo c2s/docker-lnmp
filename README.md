@@ -1,12 +1,11 @@
-## Docker LNMP 1.0
+## Docker LNMP 2.1
 
 Docker LNMP 构建出基于 Docker 的 PHP 开发环境，其优势有在短时间内随意构建不同版本的相关服务、环境统一分布在不同服务器等，使开发者能够更专注于开发业务本身。
 
 ##### 版本及组件
 
-* 当前版本：2.0
-* 自带组件：PHP/FPM 7.3、Nginx 1.12.1、mysq 5.7 、Redis 4.0.8
-
+* 当前版本：2.1
+* 自带组件：PHP/FPM 7.1/7.3/7.4/8.0、Nginx 1.19.5、mysql 5.7.32 、Redis 5.0.10
 ##### 目录结构
 
     docker-lnmp
@@ -29,7 +28,7 @@ Docker LNMP 构建出基于 Docker 的 PHP 开发环境，其优势有在短时�
     cd docker-lnmp
     cp .env-example .env
 
-    # 配置应用目录、数据库密码、时区、端口等
+    # 配置应用目录、php版本、数据库密码、时区、端口等
     vim .env
     
     # 给组件文件夹可写权限（日志需要）

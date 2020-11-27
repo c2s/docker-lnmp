@@ -14,47 +14,80 @@ services:
         - "${HTTP_PORT}:80"
         - "${HTTPS_PORT}:443"
       links:
-        - "php"
+        - ${PHP_VERSION}
       volumes:
         - ${GLOBAL_APP_PATH}work/wwwroot:/etc/nginx/html/
         - ${GLOBAL_APP_PATH}work/common/nginx/config/conf.d:/etc/nginx/conf.d
         - ${GLOBAL_APP_PATH}work/common/nginx/log:/var/log/nginx
 
   ### PHP container #########################################
-
-  php:
-      build:
-        context: ./build/php
-        args:
-          TIME_ZONE: ${GLOBAL_TIME_ZONE}
-          CHANGE_SOURCE: ${GLOBAL_CHANGE_SOURCE}
-      privileged: true
-      ports:
-        - "9000:9000"
-      links:
-        - "mysql"
-        - "redis"
-      volumes:
-        - ${GLOBAL_APP_PATH}work/wwwroot:/etc/nginx/html
-        - ${GLOBAL_APP_PATH}work/common/php/config/php.ini:/usr/local/etc/php/php.ini
-        - ${GLOBAL_APP_PATH}work/common/php/log:/var/log
-
   php71:
+    build:
+      context: ./build/php73
+      args:
+        TIME_ZONE: ${GLOBAL_TIME_ZONE}
+        CHANGE_SOURCE: ${GLOBAL_CHANGE_SOURCE}
+    privileged: true
+    ports:
+      - "9002:9000"
+    links:
+      - "mysql"
+      - "redis"
+    volumes:
+      - ${GLOBAL_APP_PATH}work/wwwroot:/etc/nginx/html
+      - ${GLOBAL_APP_PATH}work/common/php73/config/php.ini:/usr/local/etc/php/php.ini
+      - ${GLOBAL_APP_PATH}work/common/php73/log:/var/log
+
+  php73:
       build:
-        context: ./build/php71
+        context: ./build/php73
         args:
           TIME_ZONE: ${GLOBAL_TIME_ZONE}
           CHANGE_SOURCE: ${GLOBAL_CHANGE_SOURCE}
       privileged: true
       ports:
-        - "9001:9000"
+        - "9003:9000"
       links:
         - "mysql"
         - "redis"
       volumes:
         - ${GLOBAL_APP_PATH}work/wwwroot:/etc/nginx/html
-        - ${GLOBAL_APP_PATH}work/common/php71/config/php.ini:/usr/local/etc/php/php.ini
-        - ${GLOBAL_APP_PATH}work/common/php71/log:/var/log
+        - ${GLOBAL_APP_PATH}work/common/php73/config/php.ini:/usr/local/etc/php/php.ini
+        - ${GLOBAL_APP_PATH}work/common/php73/log:/var/log
+
+  php74:
+      build:
+        context: ./build/php74
+        args:
+          TIME_ZONE: ${GLOBAL_TIME_ZONE}
+          CHANGE_SOURCE: ${GLOBAL_CHANGE_SOURCE}
+      privileged: true
+      ports:
+        - "9004:9000"
+      links:
+        - "mysql"
+        - "redis"
+      volumes:
+        - ${GLOBAL_APP_PATH}work/wwwroot:/etc/nginx/html
+        - ${GLOBAL_APP_PATH}work/common/php74/config/php.ini:/usr/local/etc/php/php.ini
+        - ${GLOBAL_APP_PATH}work/common/php74/log:/var/log
+
+  php8:
+    build:
+      context: ./build/php8
+      args:
+        TIME_ZONE: ${GLOBAL_TIME_ZONE}
+        CHANGE_SOURCE: ${GLOBAL_CHANGE_SOURCE}
+    privileged: true
+    ports:
+      - "9008:9000"
+    links:
+      - "mysql"
+      - "redis"
+    volumes:
+      - ${GLOBAL_APP_PATH}work/wwwroot:/etc/nginx/html
+      - ${GLOBAL_APP_PATH}work/common/php8/config/php.ini:/usr/local/etc/php/php.ini
+      - ${GLOBAL_APP_PATH}work/common/php8/log:/var/log
 
   ### Mysql container #########################################
 
