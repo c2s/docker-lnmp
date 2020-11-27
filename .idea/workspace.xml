@@ -2,19 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a02c192-8e6d-416f-a867-ac9a7635a006" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/work/common/php71/config/php.ini" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/work/common/php71/config/php.ini-production" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/work/common/php73/config/php.ini" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/work/common/php73/config/php.ini-production" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/work/common/php74/config/php.ini" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/work/common/php74/config/php.ini-production" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/work/common/php80/config/php.ini" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/work/common/php80/config/php.ini-production" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/work/common/mysql/log/error.log" beforeDir="false" afterPath="$PROJECT_DIR$/work/common/mysql/log/error.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/work/common/nginx/config/conf.d/localhost.conf" beforeDir="false" afterPath="$PROJECT_DIR$/work/common/nginx/config/conf.d/localhost.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +90,7 @@
       <updated>1544538069949</updated>
       <workItem from="1544538071101" duration="2277000" />
       <workItem from="1555070254568" duration="227000" />
-      <workItem from="1606447223423" duration="14159000" />
+      <workItem from="1606447223423" duration="14646000" />
     </task>
     <servers />
   </component>
