@@ -1,1 +1,11 @@
 .env
+work/common/mongo/data
+work/common/mongo/log
+work/common/mysql/backup
+work/common/mysql/data
+work/common/mysql/log
+work/common/nginx/log
+work/common/php8/log
+work/common/php71/log
+work/common/php73/log
+work/common/php74/log
